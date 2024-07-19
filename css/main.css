@@ -31,7 +31,6 @@ ul {
 }
 body {
   position: relative;
-  z-index: 2;
   margin: 0;
   background-color: var(--background-color);
   color: var(--text-color);
@@ -46,15 +45,23 @@ body {
     z-index: 1;
     background-color: var(--ellipse-color);
     max-width: 1160px;
-    height: 247px;
+    width: 80vw;
+    max-height: 247px;
+    height: 30vw;
     border-radius: 50%;
     top: 319px;
     left: 50%;
     transform: translateX(-50%);
     filter: blur(20px);
+
+    @media screen and (max-width: 768px){
+        top: 150px;
+    }
 }
 
 .wrapper {
+  position: relative;
+  z-index: 2;
   min-height: 100%;
   overflow: clip;
   display: flex;
