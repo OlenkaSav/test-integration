@@ -31,10 +31,11 @@ ul {
 }
 body {
   position: relative;
+  z-index: 2;
   margin: 0;
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: 'Fira code', sans-serif;
+  font-family: 'Helvetica', sans-serif;
   font-size: 16px;
   letter-spacing: 0.03em;
 }
@@ -42,8 +43,9 @@ body {
 .content::after{
     content: '';
     position: absolute;
+    z-index: 1;
     background-color: var(--ellipse-color);
-    width: 1160px;
+    max-width: 1160px;
     height: 247px;
     border-radius: 50%;
     top: 319px;
@@ -52,47 +54,78 @@ body {
     filter: blur(20px);
 }
 
+.wrapper {
+  min-height: 100%;
+  overflow: clip;
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
-  width: 1440px;
+  max-width: 1440px;
+  width: 100%;
   padding:  0px 130px 0px;
   margin: 0 auto;
+   @media screen and (max-width: 768px){
+        padding:  0px 40px 0px;
+    }
 }
 
 .title{
     font-size: 24px;
     font-family: 'Roboto', sans-serif;
+
+    @media screen and (max-width: 768px){
+        font-size: 18px;
+    }
 }
 
 .fields{
     padding: 40px 130px 0px 130px;
     gap: 40px;
+
+    @media screen and (max-width: 768px){
+        padding:  20px 40px 0px 40px;
+    }
 }
 
 .fields__title{
     margin-bottom: 24px;
+
+    @media screen and (max-width: 768px){
+        margin-bottom: 16px;
+    }
 }
 .fields__text{
     font-size: 18px;
-    font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    width: 725px;
+    max-width: 725px;
     line-height: 1.5188rem;
     margin-bottom: 40px;
+
+    @media screen and (max-width: 768px){
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
 }
 .fields__contacts{
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 40px;
+
+    @media screen and (max-width: 768px){
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
 }
 
-.table-container {
+.table-wrapper {
     position: relative;
-    padding: 12px;
     border-radius: 14.33px;
     overflow: hidden;
 }
 
-.table-container::before {
+.table-wrapper::before {
     content: "";
     position: absolute;
     top: 0;
@@ -101,8 +134,7 @@ body {
     bottom: 0;
     padding: 1px;
     border-radius: 14.33px;
-
-    background: linear-gradient(152.67deg, #11183C -5.94%, #E7E9F5 55.4%, #343958 82.96%); /* Градиентная граница */
+    background: linear-gradient(152.67deg, #11183C -5.94%, #E7E9F5 55.4%, #343958 82.96%);
     -webkit-mask: 
         linear-gradient(#fff 0 0) content-box, 
         linear-gradient(#fff 0 0);
@@ -110,19 +142,40 @@ body {
         linear-gradient(#fff 0 0) content-box, 
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
-            mask-composite: exclude; 
+            mask-composite: exclude;
+}
+
+.table-container {
+    position: relative;
+    padding: 12px;
+    border-radius: 14.33px;
+    overflow: hidden;
+
+    @media screen and (max-width: 550px){
+      overflow-x: scroll;
+    }
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     overflow: hidden;
+
+    @media screen and (max-width: 768px){
+        font-size: 12px;
+    }
 }
 
 th, td {
    padding: 12px;
    text-align: left;
-   width: 25%
+   width: 25%;
+   min-width: 100px;
+
+   @media screen and (max-width: 768px){
+      padding: 6px;  
+      line-height: 12px;
+    }
 }
 
 thead th {
@@ -136,13 +189,26 @@ thead th {
 tbody tr:last-child, thead tr {
     border-bottom: none;
 }
+.code{
+    font-family: 'Fira Code', sans-serif;
+}
 
 .operations{
     padding-top: 96px;
     padding-bottom: 96px;
+
+    @media screen and (max-width: 768px){
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    
 }
 .operations__title{
     margin-bottom: 32px;
+
+    @media screen and (max-width: 768px){
+        margin-bottom: 20px;
+    }
 }
 .operations__item:not(:last-child){
     margin-bottom: 0.75rem;
@@ -162,12 +228,17 @@ tbody tr:last-child, thead tr {
     display: flex;
     align-items: center;
     cursor: pointer;
-    transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s ease;
+    
+    @media screen and (max-width: 768px){
+        height: 40px;
+        font-size: 14px;
+        border-radius: 6px;
+    }
 
 }
 
 .operations__button:hover, .operations__button:focus{
-    /* color: var(--button-hover); */
     transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
     transform: scale(1.01);
 }
@@ -177,9 +248,4 @@ tbody tr:last-child, thead tr {
 }
 .operations__button--right{
     margin-left: auto;
-}
-
-.operations__button:hover .operations__button--left ,
-.operations__button:hover .operations__button--right {
-    stroke: var(--button-hover);
 }

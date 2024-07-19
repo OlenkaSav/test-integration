@@ -18,100 +18,104 @@
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body class="content">
-    <section class="container fields">
-      <h2 class="title fields__title">
-        How to work with Contacts in Hubspot API
-      </h2>
-      <p class="fields__text">
-        How to work with Contacts in Hubspot API Contacts represent records
-        about people in Hubspot API. They are typically associated with
-        Companies and Activities such as Emails, Meetings, Notes, etc.
-      </p>
-      <h3 class="fields__contacts">Contact Fields</h3>
-      <div class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th>Field Name</th>
-              <th>API Key</th>
-              <th>Type</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>First Name</td>
-              <td>first_name</td>
-              <td>string</td>
-              <td>First name of the person</td>
-            </tr>
-            <tr>
-              <td>Last Name</td>
-              <td>last_name</td>
-              <td>string</td>
-              <td>Last name of the person</td>
-            </tr>
-            <tr>
-              <td>Address</td>
-              <td>address</td>
-              <td>object</td>
-              <td>Address associated with the person</td>
-            </tr>
-            <tr>
-              <td>Full</td>
-              <td>address.full</td>
-              <td>string</td>
-              <td>Full address associated with the person</td>
-            </tr>
-            <tr>
-              <td>Street</td>
-              <td>address.streeet</td>
-              <td>string</td>
-              <td>Street address</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-    <section class="container operations">
-      <h2 class="title operations__title">
-        Operations on Contacts Collection
-      </h2>
-      <ul class="operations__set">
-        <li class="operations__item">
-          <button class="operations__button">
-            <svg width="24px" height="24px" class="operations__button--left">
-              <use href="./icons/icons.svg#icon-plus"></use>
-            </svg>
-            <span class="operations__button--text">Create a Contact</span>
-            <svg width="24px" height="24px" class="operations__button--right">
-              <use href="./icons/icons.svg#icon-arrow-right"></use>
-            </svg>
-          </button>
-        </li>
-        <li class="operations__item">
-          <button class="operations__button">
-            <svg width="24px" height="24px" class="operations__button--left">
-              <use href="./icons/icons.svg#icon-file-pencil"></use>
-            </svg>
-            <span class="operations__button--text">Update a Contact</span>
-            <svg width="24px" height="24px" class="operations__button--right">
-              <use href="./icons/icons.svg#icon-arrow-right"></use>
-            </svg>
-          </button>
-        </li>
-        <li class="operations__item">
-          <button class="operations__button">
-            <svg width="24px" height="24px" class="operations__button--left">
-              <use href="./icons/icons.svg#icon-x"></use>
-            </svg>
-            <span class="operations__button--text">Delete a Contact</span>
-            <svg width="24px" height="24px" class="operations__button--right">
-              <use href="./icons/icons.svg#icon-arrow-right"></use>
-            </svg>
-          </button>
-        </li>
-      </ul>
-    </section>
+    <div class="wrapper">
+      <section class="container fields">
+        <h2 class="title fields__title">
+          How to work with Contacts in Hubspot API
+        </h2>
+        <p class="fields__text">
+          How to work with Contacts in Hubspot API Contacts represent records
+          about people in Hubspot API. They are typically associated with
+          Companies and Activities such as Emails, Meetings, Notes, etc.
+        </p>
+        <h3 class="fields__contacts">Contact Fields</h3>
+        <div class="table-wrapper">
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Field Name</th>
+                  <th>API Key</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>First Name</td>
+                  <td class="code">first_name</td>
+                  <td class="code">string</td>
+                  <td>First name of the person</td>
+                </tr>
+                <tr>
+                  <td>Last Name</td>
+                  <td class="code">last_name</td>
+                  <td class="code">string</td>
+                  <td>Last name of the person</td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td class="code">address</td>
+                  <td class="code">object</td>
+                  <td>Address associated with the person</td>
+                </tr>
+                <tr>
+                  <td>Full</td>
+                  <td class="code">address.full</td>
+                  <td class="code">string</td>
+                  <td>Full address associated with the person</td>
+                </tr>
+                <tr>
+                  <td>Street</td>
+                  <td class="code">address.streeet</td>
+                  <td class="code">string</td>
+                  <td>Street address</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section class="container operations">
+        <h2 class="title operations__title">
+          Operations on Contacts Collection
+        </h2>
+        <ul class="operations__set">
+          <li class="operations__item">
+            <button class="operations__button">
+              <svg width="24px" height="24px" class="operations__button--left">
+                <use href="./icons/icons.svg#icon-plus"></use>
+              </svg>
+              <span class="operations__button--text">Create a Contact</span>
+              <svg width="24px" height="24px" class="operations__button--right">
+                <use href="./icons/icons.svg#icon-arrow-right"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="operations__item">
+            <button class="operations__button">
+              <svg width="24px" height="24px" class="operations__button--left">
+                <use href="./icons/icons.svg#icon-file-pencil"></use>
+              </svg>
+              <span class="operations__button--text">Update a Contact</span>
+              <svg width="24px" height="24px" class="operations__button--right">
+                <use href="./icons/icons.svg#icon-arrow-right"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="operations__item">
+            <button class="operations__button">
+              <svg width="24px" height="24px" class="operations__button--left">
+                <use href="./icons/icons.svg#icon-x"></use>
+              </svg>
+              <span class="operations__button--text">Delete a Contact</span>
+              <svg width="24px" height="24px" class="operations__button--right">
+                <use href="./icons/icons.svg#icon-arrow-right"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </section>
+    </div>
   </body>
 </html>
